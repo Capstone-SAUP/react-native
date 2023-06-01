@@ -13,7 +13,7 @@ import { icons, SIZES } from '../../../constants';
 
 const jobTypes = ["Full-Time", "Part-time", "Contractor"];
 
-const Welcome = () => {
+const Welcome = ({ searchTerm, setSearchTerm, handleClick}) => {
   
   const nameuser = 'Aenon';
   
@@ -31,13 +31,13 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=''
-            onChange={() => {}}
+            value='searchTerm'
+            onChange={(text) => setSearchTerm(text)}
             placeholder='What are you looking for?'
           />
         </View>
 
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleClick}>
           <Image
             source={icons.search}
             resizeMode='contain'
